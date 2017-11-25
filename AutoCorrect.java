@@ -1,4 +1,6 @@
-
+/* Authors: Tracy Nguyen, Are Oelsner
+ * AutoCorrect File
+ */
 import java.util.*;
 import java.io.File;
 import java.util.HashMap;
@@ -7,7 +9,7 @@ import java.io.FileNotFoundException;
 public class AutoCorrect{
 
     public static final int SHORTER_LEXICON_SIZE = 73;
-    private static HashMap<Character, Integer[]> cMap; 
+    private static HashMap<Character, Integer[]> cMap;
     private static String[] m_dict = new String[SHORTER_LEXICON_SIZE]; ///< Variable that denotes the dictionary
     ////////////////////////////////////////////////////////////////////////////
     //* @brief: Constructor
@@ -21,15 +23,15 @@ public class AutoCorrect{
                 m_dict[i] = sc.next();
             }
             sc.close();
-        } 
+        }
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         initializeCMap();
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////
-    //* @brief: Initialize Character Map. Maps each character 
+    //* @brief: Initialize Character Map. Maps each character
     //* with its coordinates based on its keyboard position.
     public static void initializeCMap(){
         cMap.put('q', new Integer[]{0,2});
@@ -59,7 +61,7 @@ public class AutoCorrect{
         cMap.put('n', new Integer[]{17/3,0});
         cMap.put('m', new Integer[]{20/3,0});
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////
     //* @brief: Find Euclidean distance between two given characters
     //* @param key1: first given character
